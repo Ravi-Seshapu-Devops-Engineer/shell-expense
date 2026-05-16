@@ -21,5 +21,13 @@ END_Time=$(date +%s)
 total_time=$(($END_Time-$START_TIME))
 echo "script executed in $total_time seconds"
 
-
+##special variables
+echo "all variables passed to the script: $@"
+echo "no of variables passed to the script: $#"
+echo "status code of the previous command: $?"
+echo "present working directory: $pwd"
+echo "script name: $0"
+echo "who is running the script: $user"
+echo "PID od the script: $$"
+echo "bckground process id $!"
 
