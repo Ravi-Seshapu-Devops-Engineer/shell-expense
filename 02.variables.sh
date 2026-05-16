@@ -29,5 +29,6 @@ echo "present working directory: $PWD"
 echo "script name: $0"
 echo "who is running the script: $USER"
 echo "PID od the script: $$"
+sleep 100 &
 echo "bckground process id: $!"
 
