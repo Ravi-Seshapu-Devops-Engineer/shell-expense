@@ -15,10 +15,10 @@ read -s PASSCODE
 
 
 START_TIME=$(date +%s)
-echo "script stated executing at $START_TIME"
+#echo "script stated executing at $START_TIME"
 sleep 10
 END_Time=$(date +%s)
-total_time=$($END_Time-$START_TIME)
+total_time=$(($END_Time-$START_TIME))
 echo "script executed in $total_time seconds"
 
 
