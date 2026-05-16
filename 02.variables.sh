@@ -18,8 +18,8 @@ START_TIME=$(date +%s)
 echo "script stated executing at $START_TIME"
 sleep 10
 END_Time=$(date +%s)
-
-echo "script executed in ($END_Time-$START_TIME) seconds"
+total_time=$(END_Time-START_TIME)
+echo "script executed in $total_time seconds"
 
 
 
