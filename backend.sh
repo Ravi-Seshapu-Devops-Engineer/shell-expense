@@ -47,6 +47,9 @@ else
   echo "User already exists.. skipping"
 fi
 
+rm -r /app
+validate $? "Removing the appdirectory is"
+
 mkdir /app
 validate $? "creating app directory is"
 
@@ -65,7 +68,7 @@ validate $? "downloading the code"
 npm install
 validate $? "installing dependencies is"
 
-cp /$SCRIPT_DIR/backend.service /vim /etc/systemd/system/backend.service
+cp /$SCRIPT_DIR/backend.service /etc/systemd/system/backend.service
 validate $? "Coying the backend service file is"
 
 systemctl daemon-reload
