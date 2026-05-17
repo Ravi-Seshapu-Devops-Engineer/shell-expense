@@ -9,15 +9,15 @@ LOGS_FILE="/var/log/shell-expense/expensproject/$0.log"
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
-  echo "$R please run the scriptwith sudo user access $N" | tee -a $LOGS_FILE
+  echo -e "$R please run the scriptwith sudo user access $N" | tee -a $LOGS_FILE
   exit 1
 fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo "$R $2 failed $N" | tee -a $LOGS_FILE
+    echo -e "$R $2 failed $N" | tee -a $LOGS_FILE
   else
-    echo "$G $2 success $N" | tee -a $LOGS_FILE
+    echo -e "$G $2 success $N" | tee -a $LOGS_FILE
   fi
 }
 
