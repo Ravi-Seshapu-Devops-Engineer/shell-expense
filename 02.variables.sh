@@ -87,5 +87,5 @@ do
     validate $? "$package"
   else
     echo " The package already exits.. skipping"
-  
+  fi
 done
