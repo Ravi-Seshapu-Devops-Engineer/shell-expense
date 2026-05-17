@@ -52,12 +52,15 @@
 
 
 USERID=$(id -u)
+LOGS_FOLDER="/var/log/shell-expense"
+LOGS_FILE="/var/log/shell-expense/$0.log"
 
 if [ $USERID -ne 0 ]; then
-  echo "please run the script with sudo user access"
+  echo "please run the script with sudo user access" | tee -a $LOGS_FILE
   exit 1
 fi
 
+mkdir -p $LOGS_FOLDER
 # echo "installing nginx"
 # dnf install nginx -y
 
@@ -69,11 +72,11 @@ fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo "installing $2 failed"
+    echo "installing $2 failed" | tee -a $LOGS_FILE
   else
-    echo "installing $2 success"
+    echo "installing $2 success" | tee -a $LOGS_FILE
   fi
 }
 
-dnf install mysql
-validate $? mysql
+dnf install redis -y
+validate $? redis
