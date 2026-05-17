@@ -1,11 +1,11 @@
 #!/bin/bash
 
-R="\[31m"
-Y="\[32m"
-G="\[33m"
-N="\[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 LOGS_FOLDER="/var/log/shell-expense"
-LOGS_FILE="/var/log/shell-expense/$0.log"
+LOGS_FILE="/var/log/shell-expense/expensproject/$0.log"
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ]; then
