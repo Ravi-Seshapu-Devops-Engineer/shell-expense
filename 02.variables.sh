@@ -35,5 +35,5 @@
 #datatypes array
 
 fruits=("Apple" "banana" "mango")
-first_fruit=$(fruits{0})
+first_fruit=${fruits[0]}
 echo "$first_fruit"
