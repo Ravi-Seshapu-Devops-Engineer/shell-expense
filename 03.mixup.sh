@@ -16,9 +16,9 @@ fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo -e "$G installing $2 success" | tee $LOGS_FILE
+    echo -e "$G installing $2 failed" | tee $LOGS_FILE
   else
-    echo -e "$R installing $2 failed" | tee $LOGS_FILE
+    echo -e "$R installing $2 success" | tee $LOGS_FILE
   fi
 }
 
