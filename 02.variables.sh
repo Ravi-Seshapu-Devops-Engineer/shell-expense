@@ -40,12 +40,28 @@
 # echo "second fruit is ${fruits[1]}"
 # echo "fourth fruit is ${fruits[3]}"
 
-NUMBER=$1
+# NUMBER=$1
 
-if [ $NUMBER -gt 20 ]; then
-  echo " The number $NUMBER is greater than 20"
-elif [ $NUMBER -eq 20 ]; then
-  echo " The number $NUMBER ie equal to 20"
+# if [ $NUMBER -gt 20 ]; then
+#   echo " The number $NUMBER is greater than 20"
+# elif [ $NUMBER -eq 20 ]; then
+#   echo " The number $NUMBER ie equal to 20"
+# else
+#   echo "The number $NUMBER is less than 20"
+# fi
+
+
+USERID=$(id -u)
+
+if [ $USERID -ne 0 ]; then
+  echo "please run the script with sudo user access"
+fi
+
+echo "installing nginx"
+dnf install nginx -y
+
+if [ $? -ne 0 ]; then
+  echo "installing nginx is failed"
 else
-  echo "The number $NUMBER is less than 20"
+  echo "installing nginx is success"
 fi
