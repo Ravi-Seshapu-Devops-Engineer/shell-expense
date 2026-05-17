@@ -83,7 +83,7 @@ validate $? "enabling backend is"
 dnf install mysql -y
 validate $? "Installing mysql is"
 
-mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h $MYSQL_HOST -uroot -pExpenseApp@1 < /app/schema/backend.sql &>> $LOGS_FILE
 validate $? "loading schema is"
 
 systemctl restart backend
