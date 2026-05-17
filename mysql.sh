@@ -8,6 +8,8 @@ LOGS_FOLDER="/var/log/shell-expense"
 LOGS_FILE="/var/log/shell-expense/expensproject/$0.log"
 USERID=$(id -u)
 
+mkdir -p $LOGS_FOLDER
+
 if [ $USERID -ne 0 ]; then
   echo -e "$R please run the scriptwith sudo user access $N" | tee -a $LOGS_FILE
   exit 1
