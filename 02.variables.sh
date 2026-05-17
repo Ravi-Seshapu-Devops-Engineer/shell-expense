@@ -37,3 +37,5 @@
 fruits=("Apple" "banana" "mango")
 first_fruit=${fruits[0]}
 echo "$first_fruit"
+echo "second fruit is ${fruits[1]}"
+echo "fourth fruit is ${fruits[3]}"
