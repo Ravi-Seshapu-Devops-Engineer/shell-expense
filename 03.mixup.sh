@@ -1,6 +1,6 @@
 #!/bin/bash
-set -e
-trap 'echo "There is an error in $LINENO, Command: $BASH_COMMAND"' ERR
+# set -e
+# trap 'echo "There is an error in $LINENO, Command: $BASH_COMMAND"' ERR
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
