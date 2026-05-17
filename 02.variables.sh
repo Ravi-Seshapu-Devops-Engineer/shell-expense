@@ -78,5 +78,8 @@ validate(){
   fi
 }
 
-dnf install redis -y
-validate $? redis
+for package in $@
+do
+  dnf install $package -y
+  validate $? "$package"
+done
