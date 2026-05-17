@@ -34,8 +34,18 @@
 
 #datatypes array
 
-fruits=("Apple" "banana" "mango")
-first_fruit=${fruits[0]}
-echo "$first_fruit"
-echo "second fruit is ${fruits[1]}"
-echo "fourth fruit is ${fruits[3]}"
+# fruits=("Apple" "banana" "mango")
+# first_fruit=${fruits[0]}
+# echo "$first_fruit"
+# echo "second fruit is ${fruits[1]}"
+# echo "fourth fruit is ${fruits[3]}"
+
+NUMBER=$1
+
+if [ $NUMBER -gt 20 ]; then
+  echo " The number $NUMBER is greater than 20"
+elif [ $NUMBER -eq 20 ]; then
+  echo " The number $NUMBER ie equal to 20"
+else
+  echo "The number $NUMBER is less than 20"
+fi
