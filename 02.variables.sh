@@ -58,11 +58,22 @@ if [ $USERID -ne 0 ]; then
   exit 1
 fi
 
-echo "installing nginx"
-dnf install ngginx -y
+# echo "installing nginx"
+# dnf install nginx -y
 
-if [ $? -ne 0 ]; then
-  echo "installing nginx is failed"
-else
-  echo "installing nginx is success"
-fi
+# if [ $? -ne 0 ]; then
+#   echo "installing nginx is failed"
+# else
+#   echo "installing nginx is success"
+# fi
+
+validate(){
+  if [ $1 -ne 0 ]; then
+    echo "installing $2 failed"
+  else
+    echo "installing $2 success"
+  fi
+}
+
+dnf install mysql
+validate $? mysql
