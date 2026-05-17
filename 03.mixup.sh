@@ -16,9 +16,9 @@ fi
 
 validate(){
   if [ $1 -ne 0 ]; then
-    echo -e "$G installing $2 failed" | tee $LOGS_FILE
+    echo -e "$R installing $2 failed" | tee $LOGS_FILE
   else
-    echo -e "$R installing $2 success" | tee $LOGS_FILE
+    echo -e "$G installing $2 success" | tee $LOGS_FILE
   fi
 }
 
@@ -27,7 +27,7 @@ do
   dnf list installed $package
   if [ $? -ne 0 ]; then
     echo -e "$Y The given package is not installed. Installing now $N"
-    dnf install $package -y
+    dnf install $package -Y
     validate $? $package
   else
     echo -e "$Y already exists skipping..$N"
