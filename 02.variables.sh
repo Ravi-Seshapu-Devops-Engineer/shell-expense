@@ -80,6 +80,12 @@ validate(){
 
 for package in $@
 do
-  dnf install $package -y
-  validate $? "$package"
+  dnf list installed $package
+  if [ $? -ne 0 ]; then
+    echo " The given $package is not installed. Installing now"
+    dnf install $package -y
+    validate $? "$package"
+  else
+    echo " The package already exits.. skipping"
+  
 done
