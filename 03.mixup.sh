@@ -14,4 +14,22 @@ if [ $USERID -ne 0 ]; then
   exit 1
 fi
 
+validate(){
+  if [ $1 -ne 0 ]; then
+    echo -e "$G installing $2 success"
+  else
+    echo -e "$R installing $2 failed"
+  fi
+}
 
+for package in $@
+do
+  dnf list installed $package
+  if [ $? -ne 0 ]; then
+    echo -e "$Y The given package is no installed. Installing now $N"
+    dnf install $package -Y
+    validate $? $package
+  else
+    echo -e "$Y already exists skipping..$N"
+  fi
+done
