@@ -24,10 +24,10 @@ validate(){
 
 for package in $@
 do
-  dnf list installed $package
+  dnf list installed $package &>>$LOGS_FILE
   if [ $? -ne 0 ]; then
     echo -e "$Y The given package is not installed. Installing now $N"
-    dnf install $package -Y
+    dnf install $package -y &>>$LOGS_FILE
     validate $? $package
   else
     echo -e "$Y already exists skipping..$N"
